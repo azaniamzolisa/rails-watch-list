@@ -7,3 +7,18 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require 'faker'
+
+20.times do
+  Movie.create(
+    title: Faker::Movie.title,
+    overview: Faker::Movie.quote,
+    poster_url: "http://www.impawards.com/tv/posters/billions_ver7_xlg.jpg",
+    rating: Faker::Number.decimal(l_digits: 1)
+  )
+end
+
+# t.string :title
+# t.text :overview
+# t.string :poster_url
+# t.float :rating

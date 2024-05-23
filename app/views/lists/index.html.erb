@@ -1,0 +1,12 @@
+<div class="container mb3 mt5 text-center">
+  <h1>All Lists</h1>
+  <ul class="list-unstyled">
+    <% @lists.each do |list| %>
+      <li style="background-image: url('<%= list.background_image_url.present? ? list.background_image_url : 'path/to/default_image.jpg' %>');">
+        <%= link_to list.name, list_path(list) %>
+      </li>
+    <% end %>
+  </ul>
+  <%= link_to 'New List', new_list_path, class: "btn btn-success" %>
+  <%= link_to 'View Movies', movies_path, class: "btn btn-primary" %>
+</div>
